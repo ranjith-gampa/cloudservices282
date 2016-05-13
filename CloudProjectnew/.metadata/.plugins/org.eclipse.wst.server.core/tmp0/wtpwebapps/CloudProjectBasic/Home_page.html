@@ -1,0 +1,265 @@
+
+<html >
+<head>
+
+<title>Clouds</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link href="./css/styles1.css" rel="stylesheet" type="text/css" />
+
+
+
+  
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+
+html {
+    height: 100%;
+}
+.parent {
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center;
+}
+.parent > .child {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+  }
+  
+  b{
+   color:#ffa500;
+  
+  }
+  
+  
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" rel="home" href="#">MyApp</a>
+	</div>
+	
+	<div class="collapse navbar-collapse">
+		
+		
+		
+		<div class="col-sm-2 col-md-2 pull-right">
+      
+		
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="EmployeeLogin.jsp">Employee</a></li>
+      <li><a href="CustomerLogin.jsp">Customer</a></li>
+     
+              </ul>
+            </li>
+		</ul>
+		
+		
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Register <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="TesterRegistration.html">Tester</a></li>
+      <li><a href="AppProvRegistration.jsp">App Provider</a></li>
+      
+              </ul>
+            </li>
+		</ul>
+		
+		</div>
+		
+	</div>
+</div>
+
+
+
+   
+    <br>
+	<br>
+	<br>
+
+	
+  
+	      
+
+
+    <div id="right"> 
+	
+	<br></br>
+	<br></br>
+	
+	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="./images/image6.jpg" alt="Chania">
+    </div>
+
+    <div class="item">
+      <img src="./images/image4.jpg" alt="Chania">
+    </div>
+
+    <div class="item">
+      <img src="./images/image11.jpg" alt="Flower">
+    </div>
+
+    <div class="item">
+      <img src="./images/image2.jpg" alt="Flower">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+	<br>
+	<br>
+    
+      </div>
+	  
+	 
+
+
+
+
+      
+  
+</body>
+</html>
+
+
+<%
+try
+{
+	
+Class.forName("com.mysql.jdbc.Driver");
+String url="jdbc:mysql://localhost:3306/classicmodels";
+String username="root";
+String password="Rohit";
+String query="select * from employees where email!=?";
+Connection conn=DriverManager.getConnection(url,username,password);
+PreparedStatement stmt=conn.prepareStatement("select * from employees where email!=?");
+PreparedStatement stmt2=conn.prepareStatement("select distinct(productVendor) from products");
+PreparedStatement stmt3=conn.prepareStatement("Select sum(quantityInStock) from products where productVendor=?");
+PreparedStatement stmt4=conn.prepareStatement("select distinct(productLine) from products");
+PreparedStatement stmt5=conn.prepareStatement("Select sum(quantityInStock) from products where productLine=?");
+PreparedStatement stmt6=conn.prepareStatement("Select sum(quantityInStock) from products");
+ResultSet rs2=stmt2.executeQuery();
+ResultSet rs4=stmt4.executeQuery();
+ResultSet rs6=stmt6.executeQuery();
+int total=0;
+while(rs6.next()){
+	 total=rs6.getInt(1);
+	 
+}
+ResultSet rs3,rs5;
+int a[]=new int[50];
+int b[]=new int[50];
+int i=0;
+stmt.setString(1,"dmurphy@classicmodelcars.com" );
+ResultSet rs=stmt.executeQuery();
+DecimalFormat df = new DecimalFormat("#.####");
+df.setRoundingMode(RoundingMode.CEILING);
+
+while(rs.next())
+{
+
+
+System.out.println(rs.getString(1));
+
+}
+System.out.println("Ordered by product vendors\n");
+while (rs2.next()){
+	stmt3.setString(1,rs2.getString(1));
+	rs3=stmt3.executeQuery();
+	while(rs3.next()){
+		a[i]=rs3.getInt(1);
+		//System.out.println(total);
+		System.out.println(rs2.getString(1)+": "+df.format(((double)a[i]/(double)total)*100));
+		i++;
+	}
+}
+System.out.println("\n\n");
+System.out.println("Ordered by product Lines\n\n");
+while (rs4.next()){
+	stmt5.setString(1,rs4.getString(1));
+	rs5=stmt5.executeQuery();
+	while(rs5.next()){
+		b[i]=rs5.getInt(1);
+		
+		System.out.println(rs4.getString(1)+": "+df.format(((double)b[i]/(double)total)*100));
+		i++;
+	}
+}	
+	
+	rs7.close();
+    stmt7.close();
+	rs6.close();
+    stmt6.close();
+	rs5.close();
+    stmt5.close();
+	rs4.close();
+    stmt4.close();
+	rs3.close();
+    stmt3.close();
+    rs2.close();
+    stmt2.close();
+    rs.close();
+    stmt.close();
+    conn.close();
+    }
+catch(Exception e)
+{
+    e.printStackTrace();
+    }
+
+
+
+
+%>

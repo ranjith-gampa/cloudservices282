@@ -1,0 +1,144 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background:url("http://dc358.4shared.com/img/EDhT_Il1/s7/1417da22b90/website-background");
+	font: 13px Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+
+#main
+{
+background: #9999FF;
+width: 1114px;
+height: 272px;
+}
+
+#header {
+	width: 1000px;
+	height: 200px;
+	padding-left: 30px;
+}
+
+
+
+
+
+#menu a:hover {
+	height: 34px;
+	margin-top: -3px;
+}
+
+
+
+#left
+{
+	float: left;
+	width: 200px;
+	padding-right: 1em;
+}
+
+
+
+#right
+{
+float: right;
+width: 100%;
+}
+
+
+
+
+#right H1
+{
+	
+	padding-bottom: 10px
+	font-size: 22px;
+	font-family: Georgia, 'Times New Roman', serif;
+	color: #000;
+	text-align: center; 
+        font-weight: 200;text-shadow: 2px 2px #ff0000;
+		font-size : 60px;
+		
+	   
+}
+
+
+#right h2 {
+	margin: 0;
+	padding: 0;
+	padding-top: 10px;
+	color: #000000;
+	text-shadow: 2px 2px #ffff00;
+	font-family:Serif;
+	font-size:40px;
+	
+}
+.btn {
+  background: #d9345d;
+  background-image: -webkit-linear-gradient(top, #d9345d, #2bb850);
+  background-image: -moz-linear-gradient(top, #d9345d, #2bb850);
+  background-image: -ms-linear-gradient(top, #d9345d, #2bb850);
+  background-image: -o-linear-gradient(top, #d9345d, #2bb850);
+  background-image: linear-gradient(to bottom, #d9345d, #2bb850);
+  -webkit-border-radius: 38;
+  -moz-border-radius: 38;
+  border-radius: 38px;
+  text-shadow: 3px 3px 4px #0a010a;
+  -webkit-box-shadow: 6px 7px 5px #050005;
+  -moz-box-shadow: 6px 7px 5px #050005;
+  box-shadow: 6px 7px 5px #050005;
+  font-family: Georgia;
+  color: #0a0201;
+  font-size: 38px;
+  padding: 8px 21px 10px 25px;
+  border: solid #101314 4px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #fcec3c;
+  background-image: -webkit-linear-gradient(top, #fcec3c, #d93434);
+  background-image: -moz-linear-gradient(top, #fcec3c, #d93434);
+  background-image: -ms-linear-gradient(top, #fcec3c, #d93434);
+  background-image: -o-linear-gradient(top, #fcec3c, #d93434);
+  background-image: linear-gradient(to bottom, #fcec3c, #d93434);
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+#right h1 {
+	font-family: Arial Black, Gadget, sans-serif;
+}
+#right h1 {
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+}
+#right h1 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+#right h1 {
+	font-family: Trebuchet MS, Arial, Helvetica, sans-serif;
+}
+#right h1 {
+	font-family: Times New Roman, Times, serif;
+}
